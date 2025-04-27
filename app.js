@@ -24,4 +24,10 @@ app.get('/student/:id', function (req, res) {
     })
 })
 
+app.get('/message', async function (req, res) {
+    let result = await fetch("https://jsonplaceholder.typicode.com/todos/1")
+    let data = await result.json();
+    res.json(data);
+})
+
 app.listen(3000)
